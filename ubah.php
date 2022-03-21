@@ -44,22 +44,22 @@ if (isset($_POST["submit"])) {
 
 <style>
      legend {
-          color: #808080;
+          color: white;
           padding: 5px;
-          background: #00FFFF;
+          background: red;
           border-radius: 5px;
      }
 
      fieldset {
           max-width: 400px;
           border-radius: 10px;
-          border-color: #00FFFF;
-          background: #0000FF;
+          border-color: blue;
+          background: gray;
      }
 
      label {
           float: left;
-          color: white;
+          color: blue;
      }
 
      input {
@@ -73,13 +73,14 @@ if (isset($_POST["submit"])) {
 
      }
 
+
      .footer {
           width: 100%;
           height: 50px;
           padding-left: 0px;
           padding-right: 0px;
           line-height: 50px;
-          background-color: #e40d0d65;
+          background-color: #3f729b;
           position: absolute;
           bottom: 0px;
           right: 0px;
@@ -107,11 +108,13 @@ if (isset($_POST["submit"])) {
      }
 
      .social-media-button.instagram {
-          background: #3f729b;
+          background: red;
      }
 </style>
 
-<body background="ff.jpg">
+<body background="hsfs.jpg">
+
+<br><br>
 
 
      <div align="center">
