@@ -115,7 +115,7 @@ if (isset($_POST["submit"])) {
           <form action="" method="POST">
                <fieldset>
                     <legend>Tambah Data Mahasiswa</legend>
-                    <form action="" method="POST">
+                    <form action="" method="POST" enctype="multipart/form-data">
                     <ul>
                          <p>
                               <label for="nama" style="margin-right: 25px;">

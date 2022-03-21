@@ -2,6 +2,10 @@
 // Koneksi ke database
 require 'function.php';
 $mahasiswa = query("SELECT * FROM mahasiswa");
+if (isset($_POST["cari"])) {
+  $mahasiswa = cari($_POST["keyword"]);
+}
+
 
 ?>
 
@@ -30,7 +34,7 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
 
       /* Mengatur warna latar, warna teks, ukruan font dan jenis bold (tebal) pada header tabel */
       table th {
-        background: #ff0000;
+        background: #3f729b;
         color: #ffffff;
         font-weight: bold;
         font-size: 14px;
@@ -46,7 +50,7 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
 
       /* Mengatur warna baris */
       table tr {
-        background: #686868;
+        background: #3f729b;
       }
 
       /* Mengatur warna baris genap (akan menghasilkan warna selang seling pada baris tabel) */
@@ -61,7 +65,8 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
       .header {
         width: 100%;
         height: 100px;
-        background-color: #e40d0d65;
+        background-color:#3f729b;
+        
       }
 
       .header h1 {
@@ -70,7 +75,7 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
         text-align: left;
         font-size: 50px;
         color: rgb(252, 252, 252);
-        font-family: fantasy;
+        font-family:'Times New Roman', Times, serif;
         
       }
 
@@ -80,7 +85,7 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
                 padding-left: 0px;
                 padding-right: 0px;
                 line-height: 50px;
-                background-color: #e40d0d65;
+                background-color: #3f729b;
                 position: absolute;
                 bottom: 0px;
                 right: 0px;
@@ -108,23 +113,28 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
       }
 
       .social-media-button.instagram {
-        background: #3f729b;
+        background: red;
       }
-
+      
   </style>
 
 
-<body background="ff.jpg">
+<body background="hsfs.jpg">
   
      <div class="header">
-     <marquee direction="right"><h1>Daftar Mahasiswa</h1></marquee> 
+     <h1>Daftar Mahasiswa</h1> 
                <div style="float:LEFT">
                     <a class="akun" href="tambah.php"><button style="background-color:red; border-color:blue; color:white">TAMBAH DATA</button> </a>
                </div>
+               <form style="float:RIGHT"  action="" method="POST">
+          <input type="text" name="keyword" size="40" autofocus placeholder="Cari data yang diinginkan.." autocomplete="off">
+          <button style="background-color:red; border-color:red; color:white" type="submit" name="cari"> Search</button>
+          </form> 
      </div>
 
           <br><br><br>
-          
+
+
 
 
           <table style="margin-left:auto;margin-right:auto" border="1" cellpadding="10" cellspacing="0">
@@ -146,10 +156,10 @@ $mahasiswa = query("SELECT * FROM mahasiswa");
 
                     <td>
                          <a href="ubah.php?id=<?php echo $row["id"]; ?>">
-                              <button> ubah </button> </a>
+                         <button style="background-color:BLUE; border-color:blue; color:white"> UBAH </button> </a>
                          <a href="hapus.php?id=<?php echo $row["id"] ?>"
                               onclick="return confirm('Yakin Ingin       Menghapus Data');  ">
-                              <button> hapus </button></a>
+                              <button style="background-color:red; border-color:RED; color:white"> HAPUS </button></a>
                     </td>
                     <td><img src="img/<?php echo $row["gambar"] ?>" width="50"></td>
                     <td><?php echo $row["nama"] ?></td>
